@@ -29,10 +29,10 @@ export class RecipesService {
   }
 
   getRecipe(recipeId: string) {
-    return {
-      ...this.recipes.find(recipe => {
-        return recipe.id === recipeId;
-      })
-    };
-  }
+		return {
+			...this.recipes.find(recipe => {
+				return recipe.id === recipeId;
+			})! //Yet another ! on the end of yet another line, to tell TypeScript we know this might be a null at some point, but compile it anyway.
+		};
+	}
 }
