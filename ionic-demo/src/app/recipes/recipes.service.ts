@@ -35,4 +35,10 @@ export class RecipesService {
 			})! //Yet another ! on the end of yet another line, to tell TypeScript we know this might be a null at some point, but compile it anyway.
 		};
 	}
+
+  deleteRecipe(recipeId: string) {
+    this.recipes = this.recipes.filter(recipe => {
+      return recipe.id !== recipeId;
+    });
+  }
 }
